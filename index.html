@@ -85,14 +85,24 @@
         "Soldering",
       ];
 
-      const App = () => (
+      const App = () => {
+        const [dropdownOpen, setDropdownOpen] = React.useState(false);
+        const dropdownRef = React.useRef(null);
+        React.useEffect(() => {
+          const close = (e) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(e.target)) setDropdownOpen(false);
+          };
+          document.addEventListener("click", close);
+          return () => document.removeEventListener("click", close);
+        }, []);
+        return (
         <div className="page">
           <nav className="nav">
             <div className="logo">RK</div>
             <div className="links">
               <a href="#about">About</a>
-              <div className="dropdown">
-                <a className="dropdown-label" href="#projects">
+              <div className={"dropdown" + (dropdownOpen ? " dropdown--open" : "")} ref={dropdownRef}>
+                <a className="dropdown-label" href="#projects" onClick={(e) => { e.preventDefault(); setDropdownOpen((open) => !open); }}>
                   Projects
                 </a>
                 <div className="dropdown-menu">
@@ -120,15 +130,15 @@
                 <p className="eyebrow">About Me</p>
                 <h1>Hi, I’m Riya.</h1>
                 <p className="lead">
-                    Hi! I’m Riya Kulkarni, a senior at the University of Washington studying Informatics with a
-                    minor in Data Science, with a primary focus on software development. I enjoy building systems at 
+                    I am a senior at the University of Washington studying Informatics, with a focus on software development,
+                    and a minor in Data Science. I enjoy building systems at 
                     the intersection of software, hardware, and real-world impact, from reliable backend and 
                     developer tools to embedded and telemetry-driven systems. I’ve interned at Microsoft, 
                     where I shipped production features in Outlook and built AI-powered internal tools that 
                     improved developer efficiency across large enterprise codebases. I’m currently a 
                     Launch Controller Project Lead with the Society for Advanced Rocket Propulsion (SARP), 
                     working hands-on with Python, Raspberry Pi systems, and custom hardware in mission-critical 
-                    environments. I’ll be joining Microsoft full-time as a Software Engineer I in September, 
+                    environments. I’ll be joining Microsoft full-time as a Software Engineer in September, 
                     and I’m excited to continue building impactful, scalable software.
                 </p>
               </div>
@@ -197,7 +207,8 @@
             </section>
           </main>
         </div>
-      );
+        );
+      };
 
       const root = ReactDOM.createRoot(document.getElementById("root"));
       root.render(<App />);
