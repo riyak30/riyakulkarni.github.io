@@ -155,6 +155,32 @@ main {
   box-shadow: var(--shadow);
 }
 
+.card--hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 28px;
+  align-items: start;
+}
+
+.card-hero-logo {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+}
+
+.card-hero-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .about {
   display: grid;
   grid-template-columns: 240px 1fr;
@@ -183,6 +209,18 @@ main {
 .copy h1 {
   margin: 10px 0 14px;
   font-size: clamp(26px, 4vw, 34px);
+}
+
+.project-role {
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 600;
+  margin: 2px 0 6px;
+  letter-spacing: 0.02em;
+}
+
+.card--hero h1 {
+  margin-bottom: 6px;
 }
 
 .lead {
@@ -396,6 +434,16 @@ main {
 }
 
 @media (max-width: 780px) {
+  .card--hero {
+    grid-template-columns: 1fr;
+  }
+
+  .card-hero-logo {
+    width: 100px;
+    height: 100px;
+    margin-top: 4px;
+  }
+
   .about {
     grid-template-columns: 1fr;
   }
