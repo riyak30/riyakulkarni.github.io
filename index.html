@@ -66,37 +66,31 @@
         },
       ];
 
-      const skills = [
-        "C#",
-        "C++",
-        "JavaScript",
-        "Java",
-        "CSS",
-        "HTML",
-        "XAML",
-        "Node.js",
-        "Python",
-        "Kotlin",
-        "React JS",
-        "SQL",
-        "R",
-        "R Studio",
-        "Visual Studio",
-        "Linux",
-        "Git",
-        "MongoDB",
-        "Cassandra Query Language",
-        "API Design",
-        "Figma",
-        "Soldering",
-        "Raspberry Pi",
-        "Jenkins",
-        "Docker",
-        "Power BI",
-        "Tableau",
-        "Unit Testing",
-        "Node.js",
-        "Hardware-Software Debugging"
+      const skillCategories = [
+        {
+          category: "Languages",
+          items: ["Python", "JavaScript", "Java", "C#", "C++", "Kotlin", "R", "SQL"],
+        },
+        {
+          category: "Frontend",
+          items: ["HTML", "CSS", "XAML", "React JS"],
+        },
+        {
+          category: "Backend & Infrastructure",
+          items: ["Node.js", "MongoDB", "Cassandra Query Language", "API Design", "Jenkins", "Docker"],
+        },
+        {
+          category: "Data & Analytics",
+          items: ["R Studio", "Power BI", "Tableau"],
+        },
+        {
+          category: "Tools & Environment",
+          items: ["Git", "Visual Studio", "Linux", "Figma"],
+        },
+        {
+          category: "Hardware & Testing",
+          items: ["Raspberry Pi", "Soldering", "Hardware-Software Debugging", "Unit Testing"],
+        },
       ];
 
       const App = () => {
@@ -188,11 +182,16 @@
                 <p className="eyebrow">Skills</p>
                 <h2>Tools & stacks</h2>
               </div>
-              <div className="pill-grid">
-                {skills.map((skill) => (
-                  <span className="pill" key={skill}>
-                    {skill}
-                  </span>
+              <div className="skill-categories">
+                {skillCategories.map((cat) => (
+                  <div key={cat.category}>
+                    <p className="skill-category-label">{cat.category}</p>
+                    <div className="pill-grid" style={{marginTop: 0}}>
+                      {cat.items.map((skill) => (
+                        <span className="pill" key={skill}>{skill}</span>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
             </section>

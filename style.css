@@ -3,8 +3,8 @@
   --bg: #070b14;
   --panel: #0d1526;
   --panel-2: #111d33;
-  --text: #e7ecf5;
-  --muted: #9fb2d3;
+  --text: #f0f4fc;
+  --muted: #c4d4e8;
   --accent: #3b82f6;
   --glow: #4788ff60;
   --border: #1c2942;
@@ -250,6 +250,22 @@ main {
   margin-top: 12px;
 }
 
+.skill-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 12px;
+}
+
+.skill-category-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
 .pill {
   display: inline-flex;
   align-items: center;
@@ -311,17 +327,7 @@ main {
   padding: 10px 10px 12px;
 }
 
-.photo img {
-  width: 100%;
-  height: auto;
-  max-height: 520px;
-  object-fit: contain;
-  display: block;
-}
 
-.photo--rotate img {
-  transform: rotate(90deg);
-}
 
 .photo-caption {
   margin: 0;

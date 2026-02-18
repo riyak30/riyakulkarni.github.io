@@ -60,6 +60,13 @@
         </section>
 
         <section class="card">
+          <h2>The Problem</h2>
+          <p class="lead">
+            The ground systems UI was outdated and difficult to read, making it hard for operators to monitor and control the rocket clearly during testing. Beyond readability, there was a critical operational gap: the system didn't support pulsing and actuating valves for both launch controllers from a single interface. If the team needed to switch between controllers, someone had to manually edit a configuration text file and restart the UI — a slow, error-prone step during time-sensitive operations. The software also lacked the transmission modeling and telemetry validation needed to fully trust what was being displayed.
+          </p>
+        </section>
+
+        <section class="card">
           <h2>UI snapshots</h2>
           <div class="photo-grid">
             <figure class="photo">
@@ -84,7 +91,7 @@
         </section>
 
         <section class="card">
-          <h2>Highlights</h2>
+          <h2>What I Did</h2>
           <ul class="list">
             <li>Developed Python software for launch controllers, adding flexibility to ground systems and mid-flight transmission modeling.</li>
             <li>Conducted hardware-software debugging directly on the controller, resolving switch activation logic and signal integrity issues.</li>
@@ -92,6 +99,13 @@
             <li>Designed and executed unit tests for the launch controller codebase to harden key functionality under varied simulated conditions.</li>
             <li>Authored in-depth documentation and led a two-person subgroup, mentoring peers and keeping delivery on track.</li>
           </ul>
+        </section>
+
+        <section class="card">
+          <h2>The Outcome</h2>
+          <p class="lead">
+            The updated UI is significantly more readable and exposes valve controls directly on the main page. Operators can now pulse and actuate valves for both controllers from a single interface, with no config file edits or restarts required. Telemetry was validated end-to-end through Raspberry Pi into IGS/OpenMCT, confirming accurate packet reception, parsing, and display. The codebase is backed by unit tests and in-depth documentation to support future contributors.
+          </p>
         </section>
       </main>
     </div>
