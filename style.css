@@ -211,6 +211,14 @@ main {
   font-size: clamp(26px, 4vw, 34px);
 }
 
+.project-org {
+  color: var(--accent);
+  font-size: 19px;
+  font-weight: 600;
+  margin: 2px 0 6px;
+  letter-spacing: 0.02em;
+}
+
 .project-role {
   color: var(--accent);
   font-size: 15px;
@@ -312,13 +320,12 @@ main {
 }
 
 .photo--rotate img {
-  width: auto;
+  width: 100%;
   height: auto;
   max-height: 520px;
   object-fit: contain;
-  margin: 0 auto;
+  display: block;
   transform: rotate(90deg);
-  transform-origin: center;
 }
 
 .photo-caption {
