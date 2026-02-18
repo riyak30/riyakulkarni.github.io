@@ -320,11 +320,6 @@ main {
 }
 
 .photo--rotate img {
-  width: 100%;
-  height: auto;
-  max-height: 520px;
-  object-fit: contain;
-  display: block;
   transform: rotate(90deg);
 }
 
