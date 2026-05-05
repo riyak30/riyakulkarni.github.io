@@ -100,23 +100,14 @@
       ];
 
       const App = () => {
-        const [dropdownOpen, setDropdownOpen] = React.useState(false);
-        const dropdownRef = React.useRef(null);
-        React.useEffect(() => {
-          const close = (e) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(e.target)) setDropdownOpen(false);
-          };
-          document.addEventListener("click", close);
-          return () => document.removeEventListener("click", close);
-        }, []);
         return (
         <div className="page">
           <nav className="nav">
-            <div className="logo">RK</div>
+            <a className="logo" href="#about">RK</a>
             <div className="links">
               <a href="#about">About</a>
-              <div className={"dropdown" + (dropdownOpen ? " dropdown--open" : "")} ref={dropdownRef}>
-                <a className="dropdown-label" href="#projects" onClick={(e) => { e.preventDefault(); setDropdownOpen((open) => !open); }}>
+              <div className="dropdown">
+                <a className="dropdown-label" href="./projects.html">
                   Projects
                 </a>
                 <div className="dropdown-menu">
@@ -144,17 +135,25 @@
                 <p className="eyebrow">About Me</p>
                 <h1>Hi, I’m Riya.</h1>
                 <p className="lead">
-                    I am a senior at the University of Washington studying Informatics, with a focus on software development,
-                    and a minor in Data Science. I enjoy building systems at 
-                    the intersection of software, hardware, and real-world impact, from reliable backend and 
-                    developer tools to embedded and telemetry-driven systems. I’ve interned at Microsoft, 
-                    where I shipped production features in Outlook and built AI-powered internal tools that 
-                    improved developer efficiency across large enterprise codebases. I’m currently a 
-                    Launch Controller Project Lead with the Society for Advanced Rocket Propulsion (SARP), 
-                    working hands-on with Python, Raspberry Pi systems, and custom hardware in mission-critical 
-                    environments. I’ll be joining Microsoft full-time as a Software Engineer in September, 
+                    I am a senior at the <strong>University of Washington</strong> studying <strong>Informatics</strong>, with a focus on software development,
+                    and a minor in <strong>Data Science</strong>. I enjoy building systems at
+                    the intersection of software, hardware, and real-world impact, from reliable backend and
+                    developer tools to embedded and telemetry-driven systems. I’ve interned at <strong>Microsoft</strong>, shipping production features in <strong>Outlook</strong> and building <strong>AI-powered tools</strong> that improved developer efficiency. I’m currently a
+                    Launch Controller Project Lead with the <strong>Society for Advanced Rocket Propulsion (SARP)</strong>,
+                    working hands-on with <strong>Python</strong>, <strong>Raspberry Pi</strong> systems, and custom hardware in mission-critical
+                    environments. I’ll be joining <strong>Microsoft</strong> full-time as a <strong>Software Engineer</strong> in September,
                     and I’m excited to continue building impactful, scalable software.
                 </p>
+                <div className="pill-row about-skills">
+                  <span className="pill pill--subtle">Software Engineering</span>
+                  <span className="pill pill--subtle">AI / ML Tools</span>
+                  <span className="pill pill--subtle">Backend & APIs</span>
+                  <span className="pill pill--subtle">Embedded Systems</span>
+                  <span className="pill pill--subtle">Data Science</span>
+                  <span className="pill pill--subtle">Hardware Testing</span>
+                  <span className="pill pill--subtle">Production Engineering</span>
+                  <span className="pill pill--subtle">Front-End Design and Development</span>
+                </div>
               </div>
             </section>
 
@@ -163,7 +162,7 @@
                 <p className="eyebrow">Projects</p>
                 <h2>Selected work</h2>
               </div>
-              <div className="grid">
+<div className="grid">
                 {projects.map((project) => (
                   <article key={project.title} className="tile">
                     <div className="tile-header">

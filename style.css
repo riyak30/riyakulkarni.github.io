@@ -64,6 +64,8 @@ a {
   color: #0b0f1a;
   font-weight: 700;
   letter-spacing: 0.06em;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .links {
@@ -98,7 +100,7 @@ a {
   gap: 6px;
 }
 
-.dropdown--open .dropdown-label {
+.dropdown:hover .dropdown-label {
   color: var(--text);
 }
 
@@ -118,7 +120,7 @@ a {
   z-index: 20;
 }
 
-.dropdown--open .dropdown-menu {
+.dropdown:hover .dropdown-menu {
   display: flex;
 }
 
@@ -243,6 +245,10 @@ main {
   flex-wrap: wrap;
 }
 
+.about-skills {
+  margin-top: 32px;
+}
+
 .pill-grid {
   display: flex;
   gap: 10px;
@@ -287,6 +293,37 @@ main {
 
 .section-header {
   margin-bottom: 14px;
+}
+
+.project-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.project-category > .skill-category-label {
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.projects-headline {
+  margin: 8px 0 0;
+  color: var(--text);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.projects-subheadline {
+  margin: 6px 0 0;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-style: italic;
+  color: var(--muted);
+}
+
+.projects-blurb {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 20px 0 28px;
+  max-width: 100%;
 }
 
 .section-header h2 {
@@ -438,7 +475,7 @@ main {
 }
 
 .list li + li {
-  margin-top: 6px;
+  margin-top: 14px;
 }
 
 @media (max-width: 780px) {
