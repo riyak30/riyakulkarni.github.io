@@ -295,6 +295,18 @@ main {
   margin-bottom: 14px;
 }
 
+.tile-bullets {
+  margin: 8px 0 0;
+  padding-left: 16px;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.tile-bullets li + li {
+  margin-top: 10px;
+}
+
 .project-categories {
   display: flex;
   flex-direction: column;

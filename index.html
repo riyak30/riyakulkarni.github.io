@@ -30,44 +30,65 @@
       const projects = [
         {
           title: "Launch Controller Hardware Bring-Up (SARP)",
-          description:
-            "Assembled and soldered complete launch controller boards (SMD + through-hole), validated power and signal paths with a bench supply + multimeter, and debugged Raspberry Pi boot/connectivity issues for mission-critical ground systems.",
+          bullets: [
+            "Assembled and soldered SMD and through-hole components on launch controller boards",
+            "Debugged Raspberry Pi boot and connectivity issues",
+            "Validated power paths and signal integrity",
+          ],
           link: "./projects/launch-controller-hardware.html",
         },
         {
           title: "Ground Systems Launch Controller Software (SARP)",
-          description:
-            "Built and tested Python software for launch controllers, extending ground-system flexibility and transmission modeling. Validated telemetry end-to-end through Raspberry Pi → IGS/OpenMCT, added unit tests, and authored documentation to support future development.",
+          bullets: [
+            "Built Python software for launch controllers",
+            "Validated end-to-end telemetry through Raspberry Pi → IGS/OpenMCT",
+            "Wrote unit tests and documentation",
+          ],
           link: "./projects/ground-systems-launch-controller-software.html",
         },
         {
           title: "AI Developer Tools for Incident Resolution (Microsoft)",
-          description:
-            "Created MCP tools that let AI assistants navigate hierarchical incident data and auto-extract key details, reducing manual triage and saving ~10–20 minutes per incident. Added boilerplate generators and investigation helpers to cut repetitive dev work from ~30 minutes to seconds.",
+          bullets: [
+            "Built MCP tools enabling AI to triage incidents autonomously, saving 10–20 min each",
+            "Automated boilerplate generation, reducing dev time from 30 min to seconds",
+            "Built investigation tools to parse large codebases without reading 10,000+ line files",
+          ],
           link: "./projects/ai-developer-tools-incident-resolution.html",
         },
         {
           title: "Outlook Profile Picture Customization (Microsoft)",
-          description:
-            "Shipped a profile picture customization feature in Outlook so users can use imported or AI-generated images to distinguish accounts. Implemented a full-stack solution across C++, C#, and XAML with strong unit + manual testing support.",
+          bullets: [
+            "Shipped profile picture customization in Outlook using C++, C#, and XAML",
+            "Supported AI-generated and imported images across multiple accounts",
+            "Wrote unit tests and manual testing interface; merged 8 PRs",
+          ],
           link: "./projects/outlook-profile-picture-customization.html",
         },
         {
           title: "Call Center Self-Help Portal (Vagaro)",
-          description:
-            "Designed and deployed a self-help portal in Vagaro's Call Center platform to resolve agent timeline issues autonomously, increasing efficiency by 83%. Full-stack solution with JavaScript, C#, and MongoDB; integrated into CI/CD with Jenkins and Docker.",
+          bullets: [
+            "Built a self-help portal in JavaScript, C#, and MongoDB",
+            "Increased efficiency by 83%, saving 7 hours/week across two teams",
+            "Integrated into CI/CD with Jenkins and Docker",
+          ],
           link: "./projects/vagaro-software-engineering-intern.html",
         },
         {
           title: "Hackathons & Community Programs at Scale (DubsTech)",
-          description:
-            "Led org strategy and execution across events, partnerships, and community growth. Previously directed 4 hackathons (~600 participants), ran panels/workshops with 30+ industry experts, and built STEM outreach programming for underserved Seattle schools.",
+          bullets: [
+            "Led strategy as Co-President across events, partnerships, and outreach",
+            "Directed 7 hackathons (~600 participants) and panels with 30+ industry experts",
+            "Ran STEM outreach for underserved Seattle schools",
+          ],
           link: "./projects/dubstech-community-programs.html",
         },
         {
           title: "ICHS Capstone Redesign (UW Capstone)",
-          description:
-            "Redesigned the International Community Health Services website end-to-end — from research and Figma prototypes to a live HTML/CSS implementation — to make care, job opportunities, and resources genuinely accessible to the communities ICHS serves.",
+          bullets: [
+            "Redesigned ICHS website from Figma prototypes to live HTML/CSS",
+            "Conducted user research and iterated based on sponsor feedback",
+            "Made healthcare resources accessible to underserved communities",
+          ],
           link: "./projects/ichs-capstone-redesign.html",
         },
       ];
@@ -135,14 +156,15 @@
                 <p className="eyebrow">About Me</p>
                 <h1>Hi, I’m Riya.</h1>
                 <p className="lead">
-                    I am a senior at the <strong>University of Washington</strong> studying <strong>Informatics</strong>, with a focus on software development,
-                    and a minor in <strong>Data Science</strong>. I enjoy building systems at
-                    the intersection of software, hardware, and real-world impact, from reliable backend and
-                    developer tools to embedded and telemetry-driven systems. I’ve interned at <strong>Microsoft</strong>, shipping production features in <strong>Outlook</strong> and building <strong>AI-powered tools</strong> that improved developer efficiency. I’m currently a
-                    Launch Controller Project Lead with the <strong>Society for Advanced Rocket Propulsion (SARP)</strong>,
-                    working hands-on with <strong>Python</strong>, <strong>Raspberry Pi</strong> systems, and custom hardware in mission-critical
-                    environments. I’ll be joining <strong>Microsoft</strong> full-time as a <strong>Software Engineer</strong> in September,
-                    and I’m excited to continue building impactful, scalable software.
+                  I am a senior at the <strong>University of Washington</strong> studying <strong>software enginnering</strong>, majoring in <strong>Informatics</strong>,  
+                  and minoring in <strong>Data Science</strong>. I build across the full stack — from backend systems 
+                  and developer tools to embedded hardware and telemetry. I've interned
+                  at <strong>Microsoft</strong> shipping production features in <strong>Outlook</strong> 
+                  and building <strong>AI-powered tools</strong> for developers. I currently lead 
+                  launch control systems at <strong>SARP</strong>, working with <strong>Python</strong> 
+                  and <strong>Raspberry Pi</strong> in mission-critical environments. 
+                  I'm joining <strong>Microsoft</strong> full-time as a <strong>Software Engineer</strong> 
+                  this September.
                 </p>
                 <div className="pill-row about-skills">
                   <span className="pill pill--subtle">Software Engineering</span>
@@ -172,7 +194,9 @@
                     </div>
                     <div className="tile-body">
                       <h3>{project.title}</h3>
-                      <p>{project.description}</p>
+                      <ul className="tile-bullets">
+                        {project.bullets.map((b) => <li key={b}>{b}</li>)}
+                      </ul>
                     </div>
                     <div className="tile-footer">
                       <a href={project.link}>View details →</a>
